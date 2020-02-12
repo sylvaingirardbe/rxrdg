@@ -14,7 +14,7 @@ steps:
   displayName: Build RegexDataGenerator
   inputs:
     command: 'build'
-    projects: './Agidens.Aline/Agidens.Aline.csproj'
+    projects: './RegexDataGenerator/RegexDataGenerator.csproj'
     arguments: '-o $(Build.ArtifactStagingDirectory)/binaries'
 - task: DotNetCoreCLI@2
   displayName: Run unit tests
