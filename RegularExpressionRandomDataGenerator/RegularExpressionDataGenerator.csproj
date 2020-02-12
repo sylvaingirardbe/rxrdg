@@ -51,21 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lexer.Core.cs" />
-    <Compile Include="Lexer.Interfaces.cs" />
-    <Compile Include="Lexer.States.cs" />
-    <Compile Include="Lexer.TokenBuilder.cs" />
-    <Compile Include="Lexer.Tokens.cs" />
-    <Compile Include="Parser.Core.cs" />
-    <Compile Include="Parser.Interfaces.cs" />
-    <Compile Include="Parser.NodeBuilder.cs" />
-    <Compile Include="Parser.Nodes.cs" />
-    <Compile Include="Parser.ParseState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegExpDataGenerator.cs" />
-    <Compile Include="Visitor.DataGenerator.cs" />
-    <Compile Include="Visitor.XMLVisitor.cs" />
-    <Compile Include="Visitor.Interfaces.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
