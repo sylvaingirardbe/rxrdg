@@ -1,11 +1,9 @@
 ﻿using System.Threading;
-using NUnit.Framework;
-using RegularExpressionDataGenerator;
 using Xunit;
 
-namespace RxrdgTests
+namespace RegexDataGenerator.Tests
 {
-    public class ConcurrencyTests2
+    public class ConcurrencyTests1
     {
         [Fact]
         public void Test1()
