@@ -10,6 +10,10 @@ pool:
   name: Default
 
 steps:
+- task: GitVersion@5
+  inputs:
+    runtime: 'core'
+    preferBundledVersion: false
 - task: DotNetCoreCLI@2
   displayName: Build RegexDataGenerator
   inputs:
@@ -22,4 +26,18 @@ steps:
     command: 'test'
     testRunTitle: 'Unit tests'
     workingDirectory: '.'
-
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet pack' 
+  inputs: 
+    command: pack
+    packagesToPack: './RegexDataGenerator/*.csproj'
+    nobuild: true 
+    versioningScheme: byEnvVar 
+    versionEnvVar: GitVersion.NuGetVersion
+- task: DotNetCoreCLI@2 
+  displayName: 'dotnet nuget push' 
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'dbaf1f5a-1651-4bc6-976e-a66c70b9fe73/1d924fcf-d598-441e-8542-8ef65d6f2470'
